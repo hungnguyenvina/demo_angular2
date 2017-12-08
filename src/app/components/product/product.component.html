@@ -1,0 +1,25 @@
+<div style='text-align:center;width:800px;margin:0 auto;'>
+<p>
+   {{ titleProduct }}
+</p>
+<table border ='1'>
+    <tr>
+        <td>#id</td>
+        <td>product name</td>
+        <td>product description</td>
+        <td>product price</td>
+        <td>actions</td>
+    </tr>
+  <tr *ngFor="let product of products">
+      <td>{{ product._id }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.price }}</td>
+      <td> <button (click)="deleteProduct(product)" class="btn btn-danger">Delete</button> &nbsp;
+
+     <a class="btn btn-warning"   [routerLink]="['/update', product._id]" routerLinkActive="active">Update</a>
+  </tr>
+</table>
+
+<a href='#' class="btn btn-primary">Add new product</a> 
+</div>

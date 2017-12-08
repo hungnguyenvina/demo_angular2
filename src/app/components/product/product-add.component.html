@@ -1,0 +1,25 @@
+<div class="container">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    
+    <div class="form-group">
+      <label>Product's name</label>
+      <input type="text" class="form-control" name="productName" [(ngModel)]="product.name">
+    </div>
+
+    <div class="form-group">
+        <label>Product's description</label>
+        <input type="text" class="form-control" name="productDescription" [(ngModel)]="product.description">
+      </div>
+
+      <div class="form-group">
+          <label>Product's price</label>
+          <input type="text" class="form-control" name="productPrice" [(ngModel)]="product.price">
+        </div>
+   <input type="submit" value="Save">
+  </form>
+
+  <p>Forms value:</p>
+  {{ form.value | json }}
+  <p>Model value:</p>
+  <p>{{ product | json}}</p>
+</div>
